@@ -2,8 +2,8 @@ import pathlib
 import streamlit as st
 from fastai.vision.all import *
 
-temp = pathlib.PosixPath
-pathlib.PosixPath = pathlib.WindowsPath
+plt = platform.system()
+if plt == 'Linux': pathlib.WindowsPath = pathlib.PosixPath
 
 # setting title, app title and favicon
 st.set_page_config(page_title='Ball Classifier', page_icon='balls.jpg',
